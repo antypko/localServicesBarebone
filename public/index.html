@@ -1,0 +1,80 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="localServiceProvider">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+
+    <title>Node/Angular Todo App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- load bootstrap -->
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        #sp-list {
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND Service Providers COUNT -->
+        <div class="jumbotron text-center">
+            <h1>I'm am searching for service providers <span class="label label-info">{{ serviceProviders.length }}</span>
+            </h1>
+        </div>
+
+        <!-- Service Providers LIST -->
+        <div id="sp-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE Service Providers IN $scope.serviceProviders -->
+                <div class="checkbox" ng-repeat="serviceProvider in serviceProviders">
+                    <label>
+                        <input type="checkbox" ng-click="deleteServiceProvider(serviceProvider._id)"> {{
+                        serviceProvider.text }}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FORM TO CREATE Service Providers -->
+        <div id="service_provider-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Vasia"
+                               ng-model="formData.text">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW Service Providers -->
+                    <button ng-disabled="!formData.text.length || buttonDisabled" type="submit" class="btn btn-primary btn-lg" ng-click="createServiceProvider()">Add</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+<script src="js/controllers/main.js"></script>
+<script src="js/services/serviceProviders.js"></script>
+<script src="js/core.js"></script>
+</body>
+</html>

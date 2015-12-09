@@ -1,0 +1,16 @@
+{
+  "name": "localService",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Simple todo application.",
+  "main": "server.js",
+  "author": "Sviatoslav Chetyrkin",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.9",
+    "morgan": "^1.6.1",
+    "nodemon": "^1.8.1"
+  }
+}
