@@ -1,5 +1,6 @@
-angular.module('spService', [])
-
+//angular.module('localServiceProviderApp', [])
+angular
+    .module('localServiceProviderApp')
     // super simple service
     // each function returns a promise object 
     .factory('ServiceProviders', function($http) {
