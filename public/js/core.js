@@ -5,7 +5,11 @@ angular
         $routeProvider
             .when('/serviceProviders',{
                 templateUrl: 'partials/service_providers.html',
-                controller: 'mainController'
+                controller: 'serviceProvidersController'
+            })
+            .when('/serviceProvider/:id',{
+                templateUrl: 'partials/service_provider.html',
+                controller: 'serviceProviderController'
             })
             .otherwise({
                 redirectTo: '/serviceProviders'

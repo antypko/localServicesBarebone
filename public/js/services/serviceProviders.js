@@ -8,6 +8,9 @@ angular
             get : function() {
                 return $http.get('/api/service_providers');
             },
+            getById : function(id) {
+                return $http.get('/api/service_providers/' + id);
+            },
             create : function(todoData) {
                 return $http.post('/api/service_providers', todoData);
             },

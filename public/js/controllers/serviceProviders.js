@@ -1,6 +1,6 @@
 angular
     .module('localServiceProviderApp')
-    .controller('mainController',
+    .controller('serviceProvidersController',
         function ($scope, $http, ServiceProviders) {
             $scope.formData = {};
 
@@ -14,12 +14,16 @@ angular
                 });
 
             // when submitting the add form, send the text to the node API
+            $scope.editServiceProvider = function(id) {
+                console.log('Trying to edit service provider : ' + id);
+            };
+
             $scope.createServiceProvider = function() {
                 // validate the formData to make sure that something is there
                 // if form is empty, nothing will happen
                 // people can't just hold enter to keep adding the same to-do anymore
                 $scope.buttonDisabled = true; // we can disable the button now, but we cannot clear the form yet!
-                if ($scope.formData.text.length) { // check if something is entered
+                if ($scope.formData.name.length) { // check if something is entered
                     ServiceProviders.create($scope.formData)
                         .success(function(data) {
                             $scope.serviceProviders = data;
@@ -30,7 +34,7 @@ angular
                             console.log(data);
                         })
                         .finally(function(data) {
-                            $scope.formData.text = ""; // only now we can clear the form
+                            $scope.formData.name = ""; // only now we can clear the form
                             $scope.buttonDisabled = false; // now we can enable the button again
                         });
                 }

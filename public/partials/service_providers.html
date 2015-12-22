@@ -1,4 +1,4 @@
-<div class="container" ng-controller="mainController">
+<div class="container" ng-controller="serviceProvidersController">
 
     <!-- HEADER AND Service Providers COUNT -->
     <div class="jumbotron text-center">
@@ -11,13 +11,15 @@
         <div class="col-sm-4 col-sm-offset-4">
 
             <!-- LOOP OVER THE Service Providers IN $scope.serviceProviders -->
-            <div class="checkbox" ng-repeat="serviceProvider in serviceProviders">
-                <label>
-                    <input type="checkbox" ng-click="deleteServiceProvider(serviceProvider._id)"> {{
-                    serviceProvider.text }}
-                </label>
-            </div>
-
+            <!--<div class="checkbox" ng-repeat="serviceProvider in serviceProviders">-->
+            <ul>
+                <li ng-repeat="serviceProvider in serviceProviders">
+                    <label>
+                        <a href="serviceProvider/{{serviceProvider._id}}">{{ serviceProvider.name }}</a>
+                        <!--<input type="button" value="edit" ng-click="editServiceProvider(serviceProvider._id)">-->
+                    </label>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -29,11 +31,11 @@
 
                     <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                     <input type="text" class="form-control input-lg text-center" placeholder="Vasia"
-                           ng-model="formData.text">
+                           ng-model="formData.name">
                 </div>
 
                 <!-- createToDo() WILL CREATE NEW Service Providers -->
-                <button ng-disabled="!formData.text.length || buttonDisabled" type="submit" class="btn btn-primary btn-lg" ng-click="createServiceProvider()">Add</button>
+                <button ng-disabled="!formData.name.length || buttonDisabled" type="submit" class="btn btn-primary btn-lg" ng-click="createServiceProvider()">Add</button>
             </form>
         </div>
     </div>

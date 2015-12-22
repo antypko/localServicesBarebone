@@ -6,6 +6,10 @@ router.get('/', function (req, res) {
     res.render('index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
+router.get('*', function (req, res) {
+    res.render('index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 router.get('/partials/:name', function (req, res) {
     var name = req.params.name;
     res.render(name + '.html');
