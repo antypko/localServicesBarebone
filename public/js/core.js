@@ -1,4 +1,3 @@
-//var localServiceProviderApp = angular.module('localServiceProviderApp', ['spController', 'spService', 'ngRoute']);
 angular
     .module('localServiceProviderApp', ['ngRoute'])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){

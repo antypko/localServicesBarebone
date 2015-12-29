@@ -1,7 +1,8 @@
 angular
-    .module('localServiceProviderApp', [])
-    .controller('serviceProviderController', ["$scope", "$http", "$routeParams", "ServiceProviders",
+    .module('localServiceProviderApp')
+    .controller('serviceProviderController',
         function ($scope, $http, $routeParams, ServiceProviders) {
+            console.log('second controller');
             $scope.formData = {};
             $scope.serviceProvider = {};
             ServiceProviders.getById($routeParams.id)
@@ -22,5 +23,5 @@ angular
                         console.log('Error: ' + err);
                     });
             };
-        }]
+        }
     );

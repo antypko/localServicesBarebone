@@ -3,7 +3,7 @@ angular
     .controller('serviceProvidersController',
         function ($scope, $http, ServiceProviders) {
             $scope.formData = {};
-
+            console.log('got a controller');
             // when landing on the page, get all service_providers and show them
             ServiceProviders.get()
                 .success(function(data) {
