@@ -1,7 +1,7 @@
 angular
     .module('localServiceProviderApp')
     .controller('serviceProviderController',
-        function ($scope, $http, $routeParams, ServiceProviders) {
+        function ($scope, $routeParams, ServiceProviders) {
             console.log('second controller');
             $scope.formData = {};
             $scope.serviceProvider = {};
