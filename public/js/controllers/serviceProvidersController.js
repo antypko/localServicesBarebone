@@ -3,7 +3,6 @@ angular
     .controller('serviceProvidersController',
         function ($scope, $http, ServiceProviders) {
             $scope.formData = {};
-            console.log('got a controller');
             // when landing on the page, get all service_providers and show them
             ServiceProviders.get()
                 .success(function(data) {
@@ -12,11 +11,6 @@ angular
                 .error(function(data) {
                     console.log('Error: ' + data);
                 });
-
-            // when submitting the add form, send the text to the node API
-            $scope.editServiceProvider = function(id) {
-                console.log('Trying to edit service provider : ' + id);
-            };
 
             $scope.createServiceProvider = function() {
                 // validate the formData to make sure that something is there

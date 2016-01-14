@@ -5,20 +5,21 @@
         <h1>I'm am looking for Service provider with name  <span class="label label-info">{{ serviceProvider.name }}</span>
         </h1>
     </div>
-    <!-- FORM TO EDIT Service Providers -->
-    <!--<div id="service_provider-form" class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">-->
-            <!--<form>
+    <!-- FORM TO EDIT Service Provider -->
+    <div id="service_provider-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <form>
                 <div class="form-group">
-                    <input type="text" value="{{ serviceProvider._id }}" placeholder="id" ng-model="formData.id">
-                    <input type="text" value="{{ serviceProvider.name }}" class="form-control input-lg text-center"
-                           placeholder="name" ng-model="formData.name">
-                    <input type="text" value="{{ serviceProvider.description }}" class="form-control input-lg"
-                           placeholder="description" ng-model="formData.description">
+                    <input type="text" ng-model="serviceProvider._id" disabled>
+                    <input type="text" ng-model="serviceProvider.name" class="form-control input-lg text-center"
+                           placeholder="name">
+                    <input type="text" ng-model="serviceProvider.description" class="form-control input-lg"
+                           placeholder="description">
                 </div>
-                <button ng-disabled="!formData.text.length || buttonDisabled" type="submit" class="btn btn-primary btn-lg" ng-click="editServiceProvider()">Edit</button>
-            </form>-->
-        <!--</div>
-    </div>-->
+                <button ng-disabled="buttonDisabled" type="submit" class="btn btn-primary btn-lg"
+                        ng-click="editServiceProvider()">Edit</button>
+            </form>
+        </div>
+    </div>
 
 </div>

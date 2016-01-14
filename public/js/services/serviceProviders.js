@@ -11,8 +11,11 @@ angular
             getById : function(id) {
                 return $http.get('/api/service_providers/' + id);
             },
-            create : function(todoData) {
-                return $http.post('/api/service_providers', todoData);
+            create : function(newServiceProvider) {
+                return $http.post('/api/service_providers', newServiceProvider);
+            },
+            edit : function(serviceProvider) {
+                return $http.put('/api/service_provider', serviceProvider);
             },
             delete : function(id) {
                 return $http.delete('/api/service_providers/' + id);
